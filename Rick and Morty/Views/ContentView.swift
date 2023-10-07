@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State private var isLoading: Bool = false
     @ObservedObject var characterViewModel = CharacterViewModel()
-    
+
     var body: some View {
         NavigationView {
-            List(characterViewModel.characters ) { character in
+            List(characterViewModel.characters) { character in
                 NavigationLink(destination: CharacterDetailView(character: character)) {
                     HStack {
                         URLImageView(url: character.image)
@@ -31,7 +30,24 @@ struct ContentView: View {
         .onAppear {
             self.characterViewModel.loadCharacters()
         }
+        
+        HStack {
+            Button("Anterior") {
+                characterViewModel.previousPage()
+            }
+            .disabled(characterViewModel.currentPage == 1)
+
+            Spacer()
+
+            Button("Siguiente") {
+                characterViewModel.nextPage()
+            }
+        }
+        .padding()
+
     }
+    
+    
 }
 
 struct ContentView_Previews: PreviewProvider {

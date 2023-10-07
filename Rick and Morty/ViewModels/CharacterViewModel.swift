@@ -21,10 +21,12 @@ struct Character: Identifiable, Decodable {
 class CharacterViewModel: ObservableObject {
     public var characters: [Character] = []
     @Published var isLoading: Bool = false
-    
+    @Published var currentPage: Int = 1
+    let charactersPerPage: Int = 20
+
     func loadCharacters() {
         isLoading = true
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character/") else {
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(currentPage)") else {
             return
         }
         
@@ -47,7 +49,19 @@ class CharacterViewModel: ObservableObject {
         }
         .resume()
     }
-    
+
+    func nextPage() {
+        currentPage += 1
+        loadCharacters()
+    }
+
+    func previousPage() {
+        if currentPage > 1 {
+            currentPage -= 1
+            loadCharacters()
+        }
+    }
+
     struct CharacterResponse: Decodable {
         let results: [Character]
     }
