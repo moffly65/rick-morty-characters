@@ -25,7 +25,7 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationBarTitle("Rick and Morty Characters")
+            .navigationBarTitle("Rick and Morty Characters", displayMode: .inline)
         }
         .onAppear {
             self.characterViewModel.loadCharacters()
@@ -38,10 +38,15 @@ struct ContentView: View {
             .disabled(characterViewModel.currentPage == 1)
 
             Spacer()
+            
+            Text("Página \(characterViewModel.currentPage)/\(characterViewModel.totalPages)")
+            
+            Spacer()
 
             Button("Siguiente") {
                 characterViewModel.nextPage()
             }
+            .disabled(characterViewModel.currentPage == characterViewModel.totalPages)
         }
         .padding()
 

@@ -18,23 +18,42 @@ struct Character: Identifiable, Decodable {
     let episode: [String]
 }
 
+struct Info: Decodable {
+    let totalCount: Int
+    let totalPages: Int
+}
+
 class CharacterViewModel: ObservableObject {
-    public var characters: [Character] = []
+    @Published var characters: [Character] = []
     @Published var isLoading: Bool = false
     @Published var currentPage: Int = 1
     let charactersPerPage: Int = 20
+    
+    @Published var rawResponseData: [String: Any] = [:]
+    @Published var totalCount: Int = 0
+    @Published var totalPages: Int = 0
 
     func loadCharacters() {
         isLoading = true
         guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(currentPage)") else {
             return
         }
-        
+
         URLSession.shared.dataTask(with: url) { data, _, _ in
             if let data = data {
                 do {
+                    if let jsonData = try JSONSerialization.jsonObject(with: data, options: []) as? [String: Any] {
+                        let info = jsonData["info"] as? [String: Any] ?? [:]
+                        DispatchQueue.main.async {
+                            self.rawResponseData = jsonData
+                            self.totalCount = info["count"] as? Int ?? 0
+                            self.totalPages = info["pages"] as? Int ?? 0
+                        }
+                    }
+
                     let decoder = JSONDecoder()
                     let response = try decoder.decode(CharacterResponse.self, from: data)
+
                     DispatchQueue.main.async {
                         self.characters = response.results
                         self.isLoading = false
@@ -65,5 +84,4 @@ class CharacterViewModel: ObservableObject {
     struct CharacterResponse: Decodable {
         let results: [Character]
     }
-    
 }
