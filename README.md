@@ -47,7 +47,7 @@ Este proyecto sigue la arquitectura MVVM (Model-View-ViewModel):
 
 ## Créditos
 
-- **José Toro**
+**José Toro**
 Senior iOS Developer
 LinkedIn: (https://www.linkedin.com/in/jose-toro-54675418a/)
 
