@@ -11,7 +11,7 @@ import Foundation
 struct FancyGreyCard: View {
     var body: some View {
         Rectangle()
-            .fill(Color.gray)
+            .fill(Color(red: 0.2, green: 0.2, blue: 0.2))
             .cornerRadius(10)
             .padding(20)
     }
@@ -19,12 +19,7 @@ struct FancyGreyCard: View {
 
 struct CharacterDetailView: View {
     let character: Character
-    private let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
-        return formatter
-    }()
-
+    
     var body: some View {
         ZStack {
             FancyGreyCard()
@@ -41,7 +36,7 @@ struct CharacterDetailView: View {
                 Text(character.species)
                     .font(.title2)
                     .foregroundColor(Color.white)
-
+                
                 VStack(alignment: .leading) {
                     HStack {
                         if character.status == "Alive" {
@@ -59,8 +54,8 @@ struct CharacterDetailView: View {
                     Spacer()
                     Text("Gender: " + character.gender )
                     Spacer()
-                    if let createdDate = dateFormatter.date(from: character.created) {
-                        Text("Created: \(formattedDate(createdDate))")
+                    if let createdDate = Utils.dateFormatter.date(from: character.created) {
+                        Text("Created: \(Utils.formattedDate(createdDate))")
                     } else {
                         Text("Fecha incorrecta")
                     }
@@ -68,24 +63,16 @@ struct CharacterDetailView: View {
                 }
                 .padding(10)
                 .foregroundColor(Color.white)
-
-//                List {
-//                    Section(header: Text("Episodes")) {
-//                        ForEach(character.episode, id: \.self) { item in
-//                            Text(item)
-//                        }
-//                    }
-//                }
+                
+                //                List {
+                //                    Section(header: Text("Episodes")) {
+                //                        ForEach(character.episode, id: \.self) { item in
+                //                            Text(item)
+                //                        }
+                //                    }
+                //                }
             }
             .padding(20)
         }
     }
-    
-    private func formattedDate(_ date: Date) -> String {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .medium
-        return formatter.string(from: date)
-    }
-
 }

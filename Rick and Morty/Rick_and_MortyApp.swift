@@ -12,6 +12,7 @@ struct Rick_and_MortyApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
+            //.background(Color(red: 0.9, green: 0.9, blue: 0.9))
         }
     }
 }

@@ -18,27 +18,24 @@ struct Character: Identifiable, Decodable {
     let episode: [String]
 }
 
-struct Info: Decodable {
-    let totalCount: Int
-    let totalPages: Int
-}
-
 class CharacterViewModel: ObservableObject {
     @Published var characters: [Character] = []
-    @Published var isLoading: Bool = false
+    @Published var isLoading: Bool = true
     @Published var currentPage: Int = 1
     let charactersPerPage: Int = 20
-    
+    @Published var error: Error? = nil
     @Published var rawResponseData: [String: Any] = [:]
     @Published var totalCount: Int = 0
     @Published var totalPages: Int = 0
-
+    
     func loadCharacters() {
         isLoading = true
+        error = nil
         guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(currentPage)") else {
+            isLoading = false
             return
         }
-
+        
         URLSession.shared.dataTask(with: url) { data, _, _ in
             if let data = data {
                 do {
@@ -50,10 +47,9 @@ class CharacterViewModel: ObservableObject {
                             self.totalPages = info["pages"] as? Int ?? 0
                         }
                     }
-
                     let decoder = JSONDecoder()
                     let response = try decoder.decode(CharacterResponse.self, from: data)
-
+                    
                     DispatchQueue.main.async {
                         self.characters = response.results
                         self.isLoading = false
@@ -62,25 +58,26 @@ class CharacterViewModel: ObservableObject {
                     print("Error decoding data: \(error)")
                     DispatchQueue.main.async {
                         self.isLoading = false
+                        self.error = error
                     }
                 }
             }
         }
         .resume()
     }
-
+    
     func nextPage() {
         currentPage += 1
         loadCharacters()
     }
-
+    
     func previousPage() {
         if currentPage > 1 {
             currentPage -= 1
             loadCharacters()
         }
     }
-
+    
     struct CharacterResponse: Decodable {
         let results: [Character]
     }
