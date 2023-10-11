@@ -57,7 +57,7 @@ struct CharacterDetailView: View {
                     if let createdDate = Utils.dateFormatter.date(from: character.created) {
                         Text("Created: \(Utils.formattedDate(createdDate))")
                     } else {
-                        Text("Fecha incorrecta")
+                        Text("Incorrect date")
                     }
                     Spacer()
                 }
@@ -76,3 +76,10 @@ struct CharacterDetailView: View {
         }
     }
 }
+
+//struct CharacterDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        CharacterDetailView(character: Character)
+//    }
+//}
+

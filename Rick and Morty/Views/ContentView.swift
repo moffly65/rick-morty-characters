@@ -11,9 +11,9 @@ struct ContentView: View {
     @ObservedObject var characterViewModel = CharacterViewModel()
     
     var body: some View {
-        NavigationView {
+        //NavigationView {
             if characterViewModel.isLoading {
-                ProgressView("Cargando...")
+                ProgressView("Loading...")
                     .progressViewStyle(CircularProgressViewStyle())
                     .onAppear {
                         self.characterViewModel.loadCharacters()
@@ -36,10 +36,10 @@ struct ContentView: View {
                     .listRowBackground(Color(red: 0.2, green: 0.2, blue: 0.2))
                     .listRowSeparatorTint(Color.white)
                 }
-                .navigationBarTitle("Rick and Morty Characters", displayMode: .inline)
+                .navigationBarTitle("Characters", displayMode: .inline)
                 .foregroundColor(Color.white)
             }
-        }
+        //}
         
         VStack {
             HStack {
