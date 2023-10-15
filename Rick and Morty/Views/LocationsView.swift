@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LocationsView.swift
 //  Rick and Morty
 //
 //  Created by Jose Maria Toro on 4/10/23.
@@ -7,66 +7,67 @@
 
 import SwiftUI
 
-struct ContentView: View {
+struct LocationsView: View {
+    @ObservedObject var locationViewModel = LocationViewModel()
     @ObservedObject var characterViewModel = CharacterViewModel()
     
     var body: some View {
-        if characterViewModel.isLoading {
+        if locationViewModel.isLoading || characterViewModel.isLoading {
             ProgressView("Loading...")
                 .progressViewStyle(CircularProgressViewStyle())
                 .onAppear {
+                    self.locationViewModel.loadLocations()
                     self.characterViewModel.loadCharacters()
                 }
-        } else if let error = characterViewModel.error {
+        } else if let error = locationViewModel.error {
             Text("Error: \(error.localizedDescription)")
         } else {
-            List(characterViewModel.characters) { character in
-                NavigationLink(destination: CharacterDetailView(character: character)) {
+            
+            List(locationViewModel.locations) { location in
+                NavigationLink(destination: LocationDetailView(location:location)) {
                     HStack {
-                        URLImageView(url: character.image)
-                            .frame(width: 50, height: 50)
-                            .cornerRadius(25)
-                            .overlay(Circle().stroke(Color.white,lineWidth: 1))
-                        Text(character.name)
+                        Text(location.name)
+                            .bold()
                         Spacer()
-                        Text(character.species)
+                        Text(location.type)
                     }
+                    .foregroundColor(Color.white)
                 }
                 .listRowBackground(Color(red: 0.2, green: 0.2, blue: 0.2))
                 .listRowSeparatorTint(Color.white)
             }
-            .navigationBarTitle("Characters", displayMode: .inline)
+            .navigationBarTitle("Locations", displayMode: .inline)
             .foregroundColor(Color.white)
         }
         
         VStack {
             HStack {
                 Button(action: {
-                    characterViewModel.previousPage()
+                    locationViewModel.previousPage()
                 }) {
                     Image(systemName: "arrow.left.circle.fill")
                         .font(.title)
                         .padding()
                         .foregroundColor(.blue)
                 }
-                .disabled(characterViewModel.currentPage == 1)
+                .disabled(locationViewModel.currentPage == 1)
                 
                 Spacer()
                 
-                Text("Página \(characterViewModel.currentPage)/\(characterViewModel.totalPages)")
+                Text("Página \(locationViewModel.currentPage)/\(locationViewModel.totalPages)")
                     .foregroundColor(Color.white)
                 
                 Spacer()
                 
                 Button(action: {
-                    characterViewModel.nextPage()
+                    locationViewModel.nextPage()
                 }) {
                     Image(systemName: "arrow.right.circle.fill")
                         .font(.title)
                         .padding()
                         .foregroundColor(.blue)
                 }
-                .disabled(characterViewModel.currentPage == characterViewModel.totalPages)
+                .disabled(locationViewModel.currentPage == locationViewModel.totalPages)
             }
         }
         .background(Color(red: 0.2, green: 0.2, blue: 0.2))
@@ -75,8 +76,8 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LocationView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LocationsView()
     }
 }

@@ -19,6 +19,7 @@ struct Character: Identifiable, Decodable {
 }
 
 class CharacterViewModel: ObservableObject {
+    @Published var character: Character?
     @Published var characters: [Character] = []
     @Published var isLoading: Bool = true
     @Published var currentPage: Int = 1
@@ -66,6 +67,56 @@ class CharacterViewModel: ObservableObject {
         .resume()
     }
     
+    func loadCharactersFromURLS(strings:[String]) {
+        isLoading = true
+        error = nil
+        
+        for item in strings {
+            guard let _ = URL(string: item) else {
+                isLoading = false
+                return
+            }
+            self.loadCharacterFromURL(url: item)
+        }
+    }
+    
+    func loadCharacterFromURL(url: String) {
+        isLoading = true
+        error = nil
+        
+        guard let characterURL = URL(string: url) else {
+            isLoading = false
+            return
+        }
+        
+        URLSession.shared.dataTask(with: characterURL) { data, _, error in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                
+                if let error = error {
+                    self.error = error
+                    return
+                }
+                
+                guard let data = data else {
+                    return
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode(Character.self, from: data)
+                    self.character = response
+                    if let character = self.character {
+                        self.characters.append(character)
+                    }
+                    print(response.name as Any)
+                } catch {
+                    self.error = error
+                }
+            }
+        }
+        .resume()
+    }
+    
     func nextPage() {
         currentPage += 1
         loadCharacters()
@@ -80,5 +131,9 @@ class CharacterViewModel: ObservableObject {
     
     struct CharacterResponse: Decodable {
         let results: [Character]
+    }
+    
+    struct SingleCharacterResponse: Decodable {
+        let results: Character
     }
 }

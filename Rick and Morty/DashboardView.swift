@@ -14,7 +14,7 @@ struct DashboardView: View {
                 Image("appdash")
                     .resizable()
                     .aspectRatio(contentMode: .fit)
-                    //.frame(height: 400)
+                //.frame(height: 400)
                     .cornerRadius(30)
                     .padding()
                 //Spacer()
@@ -30,7 +30,7 @@ struct DashboardView: View {
                         }
                     }
                     Spacer()
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: LocationsView()) {
                         VStack {
                             Image("locations")
                                 .resizable()
@@ -52,14 +52,10 @@ struct DashboardView: View {
                             Text("Episodes")
                         }
                     }
-                    //Spacer()
                 }
                 .padding()
                 .navigationBarTitle("Rick & Morty Show")
             }
-            
-            //.background(Color(red: 0.9, green: 0.9, blue: 0.8))
-            
         }
         
     }
@@ -69,5 +65,4 @@ struct DashboardView: View {
             DashboardView()
         }
     }
-    
 }

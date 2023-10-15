@@ -63,14 +63,6 @@ struct CharacterDetailView: View {
                 }
                 .padding(10)
                 .foregroundColor(Color.white)
-                
-                //                List {
-                //                    Section(header: Text("Episodes")) {
-                //                        ForEach(character.episode, id: \.self) { item in
-                //                            Text(item)
-                //                        }
-                //                    }
-                //                }
             }
             .padding(20)
         }

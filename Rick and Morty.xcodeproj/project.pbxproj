@@ -7,9 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		821F21982ADAE3D90018B0A1 /* LocationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F21972ADAE3D90018B0A1 /* LocationViewModel.swift */; };
+		821F219A2ADAE9400018B0A1 /* LocationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 821F21992ADAE9400018B0A1 /* LocationsView.swift */; };
 		82200A372AD4762F004F5953 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82200A362AD4762F004F5953 /* Utils.swift */; };
 		823DA7792AD61A4000F43274 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823DA7782AD61A4000F43274 /* DashboardView.swift */; };
 		828AE18A2ACDF8F200E4D94A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 828AE1892ACDF8F100E4D94A /* README.md */; };
+		828D1C382ADB04E200DAAB78 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */; };
 		82CB60DE2AD63C4E00785690 /* appdash.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CB60DD2AD63C4E00785690 /* appdash.png */; };
 		82D2AD592ACDC17F00BF3108 /* Rick_and_MortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AD582ACDC17F00BF3108 /* Rick_and_MortyApp.swift */; };
 		82D2AD5B2ACDC17F00BF3108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AD5A2ACDC17F00BF3108 /* ContentView.swift */; };
@@ -41,9 +44,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		821F21972ADAE3D90018B0A1 /* LocationViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationViewModel.swift; sourceTree = "<group>"; };
+		821F21992ADAE9400018B0A1 /* LocationsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationsView.swift; sourceTree = "<group>"; };
 		82200A362AD4762F004F5953 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		823DA7782AD61A4000F43274 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		828AE1892ACDF8F100E4D94A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		82CB60DD2AD63C4E00785690 /* appdash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appdash.png; sourceTree = "<group>"; };
 		82D2AD552ACDC17E00BF3108 /* Rick and Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D2AD582ACDC17F00BF3108 /* Rick_and_MortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_and_MortyApp.swift; sourceTree = "<group>"; };
@@ -158,8 +164,10 @@
 			isa = PBXGroup;
 			children = (
 				82D2AD5A2ACDC17F00BF3108 /* ContentView.swift */,
+				821F21992ADAE9400018B0A1 /* LocationsView.swift */,
 				82D2AD882ACDEC4F00BF3108 /* URLImageView.swift */,
 				82D2AD842ACDD78200BF3108 /* CharacterDetailView.swift */,
+				828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -168,6 +176,7 @@
 			isa = PBXGroup;
 			children = (
 				82D2AD822ACDC5F300BF3108 /* CharacterViewModel.swift */,
+				821F21972ADAE3D90018B0A1 /* LocationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -310,7 +319,10 @@
 				823DA7792AD61A4000F43274 /* DashboardView.swift in Sources */,
 				82D2AD892ACDEC4F00BF3108 /* URLImageView.swift in Sources */,
 				82D2AD852ACDD78200BF3108 /* CharacterDetailView.swift in Sources */,
+				821F219A2ADAE9400018B0A1 /* LocationsView.swift in Sources */,
 				82200A372AD4762F004F5953 /* Utils.swift in Sources */,
+				828D1C382ADB04E200DAAB78 /* LocationDetailView.swift in Sources */,
+				821F21982ADAE3D90018B0A1 /* LocationViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +497,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josemaria.rm.Rick-and-Morty";
+				PRODUCT_BUNDLE_IDENTIFIER = com.josemaria.rm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -517,7 +529,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.josemaria.rm.Rick-and-Morty";
+				PRODUCT_BUNDLE_IDENTIFIER = com.josemaria.rm;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
