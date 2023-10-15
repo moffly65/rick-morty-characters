@@ -42,7 +42,7 @@ struct DashboardView: View {
                     }
                     Spacer()
                     
-                    NavigationLink(destination: ContentView()) {
+                    NavigationLink(destination: EpisodesView()) {
                         VStack {
                             Image("episodes")
                                 .resizable()
