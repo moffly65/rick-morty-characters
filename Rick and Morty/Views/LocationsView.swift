@@ -45,16 +45,23 @@ struct LocationsView: View {
                 Button(action: {
                     locationViewModel.previousPage()
                 }) {
-                    Image(systemName: "arrow.left.circle.fill")
-                        .font(.title)
-                        .padding()
-                        .foregroundColor(.blue)
+                    if locationViewModel.currentPage == 1 {
+                        Image(systemName: "arrow.left.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.gray)
+                    } else {
+                        Image(systemName: "arrow.left.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.blue)
+                    }
                 }
                 .disabled(locationViewModel.currentPage == 1)
-                
+
                 Spacer()
                 
-                Text("Página \(locationViewModel.currentPage)/\(locationViewModel.totalPages)")
+                Text("Page \(locationViewModel.currentPage)/\(locationViewModel.totalPages)")
                     .foregroundColor(Color.white)
                 
                 Spacer()
@@ -62,10 +69,17 @@ struct LocationsView: View {
                 Button(action: {
                     locationViewModel.nextPage()
                 }) {
-                    Image(systemName: "arrow.right.circle.fill")
-                        .font(.title)
-                        .padding()
-                        .foregroundColor(.blue)
+                    if locationViewModel.currentPage == locationViewModel.totalPages {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.gray)
+                    } else {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.blue)
+                    }
                 }
                 .disabled(locationViewModel.currentPage == locationViewModel.totalPages)
             }

@@ -54,7 +54,7 @@ struct EpisodesView: View {
                 
                 Spacer()
                 
-                Text("Página \(episodeViewModel.currentPage)/\(episodeViewModel.totalPages)")
+                Text("Page \(episodeViewModel.currentPage)/\(episodeViewModel.totalPages)")
                     .foregroundColor(Color.white)
                 
                 Spacer()

@@ -23,7 +23,10 @@ struct ContentView: View {
         } else {
                 TextField("Search or Enter for all", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(10)
+                    .padding(.leading, 10)
+                    .padding(.trailing, 10)
+                    .padding(.top, 10)
+                    .padding(.bottom, 0)
                     .onSubmit {
                         characterViewModel.searchString = searchText
                         self.characterViewModel.loadCharacters()
@@ -53,16 +56,23 @@ struct ContentView: View {
                 Button(action: {
                     characterViewModel.previousPage()
                 }) {
-                    Image(systemName: "arrow.left.circle.fill")
-                        .font(.title)
-                        .padding()
-                        .foregroundColor(.blue)
+                    if characterViewModel.currentPage == 1 {
+                        Image(systemName: "arrow.left.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.gray)
+                    } else {
+                        Image(systemName: "arrow.left.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.blue)
+                    }
                 }
                 .disabled(characterViewModel.currentPage == 1)
-                
+
                 Spacer()
                 
-                Text("Página \(characterViewModel.currentPage)/\(characterViewModel.totalPages)")
+                Text("Page \(characterViewModel.currentPage)/\(characterViewModel.totalPages)")
                     .foregroundColor(Color.white)
                 
                 Spacer()
@@ -70,10 +80,17 @@ struct ContentView: View {
                 Button(action: {
                     characterViewModel.nextPage()
                 }) {
-                    Image(systemName: "arrow.right.circle.fill")
-                        .font(.title)
-                        .padding()
-                        .foregroundColor(.blue)
+                    if characterViewModel.currentPage == characterViewModel.totalPages {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.gray)
+                    } else {
+                        Image(systemName: "arrow.right.circle.fill")
+                            .font(.title)
+                            .padding()
+                            .foregroundColor(.blue)
+                    }
                 }
                 .disabled(characterViewModel.currentPage == characterViewModel.totalPages)
             }
