@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @ObservedObject var characterViewModel = CharacterViewModel()
+    @State private var searchText = ""
     
     var body: some View {
         if characterViewModel.isLoading {
@@ -20,6 +21,14 @@ struct ContentView: View {
         } else if let error = characterViewModel.error {
             Text("Error: \(error.localizedDescription)")
         } else {
+                TextField("Search or Enter for all", text: $searchText)
+                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .padding(10)
+                    .onSubmit {
+                        characterViewModel.searchString = searchText
+                        self.characterViewModel.loadCharacters()
+                        searchText = ""
+                    }
             List(characterViewModel.characters) { character in
                 NavigationLink(destination: CharacterDetailView(character: character)) {
                     HStack {

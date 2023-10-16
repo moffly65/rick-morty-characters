@@ -22,6 +22,8 @@ class CharacterViewModel: ObservableObject {
     @Published var character: Character?
     @Published var characters: [Character] = []
     @Published var isLoading: Bool = true
+    @Published var searchString: String = ""
+
     @Published var currentPage: Int = 1
     let charactersPerPage: Int = 20
     @Published var error: Error? = nil
@@ -32,7 +34,7 @@ class CharacterViewModel: ObservableObject {
     func loadCharacters() {
         isLoading = true
         error = nil
-        guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(currentPage)") else {
+        guard let url = URL(string: "https://rickandmortyapi.com/api/character/?page=\(currentPage)&name=\(searchString)") else {
             isLoading = false
             return
         }
