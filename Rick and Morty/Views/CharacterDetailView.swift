@@ -18,6 +18,8 @@ struct FancyGreyCard: View {
 }
 
 struct CharacterDetailView: View {
+    @ObservedObject var locationViewModel = LocationViewModel()
+    
     let character: Character
     
     var body: some View {
@@ -51,11 +53,40 @@ struct CharacterDetailView: View {
                         }
                         Text(character.status )
                     }
+                    
                     Spacer()
-                    Text("Gender: " + character.gender )
+                    
+                    HStack {
+                        Text("Gender:")
+                            .foregroundColor(.gray)
+                        Text(character.gender )
+                            .foregroundColor(.white)
+                    }
+                    
                     Spacer()
+                    
+                    HStack {
+                        Text("Last known location:")
+                            .foregroundColor(.gray)
+                        if let location = self.locationViewModel.location {
+                            NavigationLink(destination: LocationDetailView(location:location)) {
+                                if let name = character.location["name"] {
+                                    Text(name)
+                                        .foregroundColor(.blue)
+                                }
+                            }}
+                    }
+                    
+                    Spacer()
+                    
                     if let createdDate = Utils.dateFormatter.date(from: character.created) {
-                        Text("Created: \(Utils.formattedDate(createdDate))")
+                        HStack {
+                            Text("Created:")
+                                .foregroundColor(.gray)
+                            Text(Utils.formattedDate(createdDate))
+                                .foregroundColor(.white)
+                        }
+                        
                     } else {
                         Text("Incorrect date")
                     }
@@ -66,6 +97,12 @@ struct CharacterDetailView: View {
             }
             .padding(20)
         }
+        .onAppear {
+            if let url = character.location["url"]  {
+                self.locationViewModel.loadLocationFromURL(url: url)
+            }
+        }
+        
     }
 }
 

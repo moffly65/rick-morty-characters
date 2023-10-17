@@ -14,6 +14,7 @@ struct Character: Identifiable, Decodable {
     let image: URL
     let status: String
     let gender: String
+    let location: [String:String]
     let created: String
     let episode: [String]
 }

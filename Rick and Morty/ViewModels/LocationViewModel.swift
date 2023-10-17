@@ -19,6 +19,8 @@ struct Location: Identifiable, Decodable {
 
 class LocationViewModel: ObservableObject {
     @Published var locations: [Location] = []
+    @Published var location: Location?
+
     @Published var isLoading: Bool = true
     @Published var currentPage: Int = 1
     let locationsPerPage: Int = 20
@@ -64,7 +66,40 @@ class LocationViewModel: ObservableObject {
         }
         .resume()
     }
-    
+ 
+    func loadLocationFromURL(url: String) {
+        isLoading = true
+        error = nil
+        
+        guard let locationURL = URL(string: url) else {
+            isLoading = false
+            return
+        }
+        
+        URLSession.shared.dataTask(with: locationURL) { data, _, error in
+            DispatchQueue.main.async {
+                self.isLoading = false
+                
+                if let error = error {
+                    self.error = error
+                    return
+                }
+                
+                guard let data = data else {
+                    return
+                }
+                
+                do {
+                    let response = try JSONDecoder().decode(Location.self, from: data)
+                    self.location = response
+                    print(response.name as Any)
+                } catch {
+                    self.error = error
+                }
+            }
+        }
+        .resume()
+    }
     func nextPage() {
         currentPage += 1
         loadLocations()
