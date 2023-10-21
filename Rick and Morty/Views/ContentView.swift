@@ -23,8 +23,8 @@ struct ContentView: View {
         } else {
                 TextField("Search or Enter for all", text: $searchText)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.leading, 10)
-                    .padding(.trailing, 10)
+                    .padding(.leading, 15)
+                    .padding(.trailing, 15)
                     .padding(.top, 10)
                     .padding(.bottom, 0)
                     .onSubmit {
