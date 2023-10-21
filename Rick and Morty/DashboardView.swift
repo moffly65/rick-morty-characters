@@ -57,7 +57,6 @@ struct DashboardView: View {
                 .navigationBarTitle("Rick & Morty Show")
             }
         }
-        
     }
     
     struct DashboardView_Previews: PreviewProvider {

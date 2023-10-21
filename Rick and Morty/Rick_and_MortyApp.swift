@@ -11,7 +11,7 @@ import SwiftUI
 struct Rick_and_MortyApp: App {
     var body: some Scene {
         WindowGroup {
-            DashboardView()
+            DashboardView2()
             //.background(Color(red: 0.9, green: 0.9, blue: 0.9))
         }
     }
