@@ -10,7 +10,8 @@ import Foundation
 
 struct LocationDetailView: View {
     @ObservedObject var characterViewModel = CharacterViewModel()
-    
+    @Environment(\.colorScheme) var colorScheme
+
     let location: Location
     
     var body: some View {
@@ -41,7 +42,7 @@ struct LocationDetailView: View {
                 
                 List {// }(characterViewModel.characters) { character in
                     Text("Residents: (\(characterViewModel.characters.count))" )
-                        .foregroundColor(Color.black)
+                        .foregroundColor(colorScheme == .dark ? .cyan : .black)
                         .font(.subheadline)
                     ForEach(characterViewModel.characters) { character in
                         NavigationLink(destination: CharacterDetailView(character: character)) {

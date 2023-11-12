@@ -15,6 +15,14 @@
 		82200A372AD4762F004F5953 /* Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82200A362AD4762F004F5953 /* Utils.swift */; };
 		823DA7792AD61A4000F43274 /* DashboardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 823DA7782AD61A4000F43274 /* DashboardView.swift */; };
 		824156DD2AE19BB70085FC56 /* DashButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 824156DC2AE19BB70085FC56 /* DashButtonView.swift */; };
+		82838DB32B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.44.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DAB2B0175A500188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.44.png */; };
+		82838DB42B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DAC2B0175A500188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png */; };
+		82838DB52B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DAD2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png */; };
+		82838DB62B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DAE2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png */; };
+		82838DB72B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.54.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DAF2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.54.png */; };
+		82838DB82B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.42.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DB02B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.42.png */; };
+		82838DB92B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DB12B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png */; };
+		82838DBA2B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.54.14.png in Resources */ = {isa = PBXBuildFile; fileRef = 82838DB22B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.54.14.png */; };
 		828AE18A2ACDF8F200E4D94A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 828AE1892ACDF8F100E4D94A /* README.md */; };
 		828D1C382ADB04E200DAAB78 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */; };
 		82A4AE6E2AE1574E007099EB /* DashboardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4AE6D2AE1574E007099EB /* DashboardView2.swift */; };
@@ -57,6 +65,14 @@
 		82200A362AD4762F004F5953 /* Utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utils.swift; sourceTree = "<group>"; };
 		823DA7782AD61A4000F43274 /* DashboardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardView.swift; sourceTree = "<group>"; };
 		824156DC2AE19BB70085FC56 /* DashButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashButtonView.swift; sourceTree = "<group>"; };
+		82838DAB2B0175A500188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.44.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.44.png"; sourceTree = "<group>"; };
+		82838DAC2B0175A500188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png"; sourceTree = "<group>"; };
+		82838DAD2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png"; sourceTree = "<group>"; };
+		82838DAE2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png"; sourceTree = "<group>"; };
+		82838DAF2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.54.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.54.png"; sourceTree = "<group>"; };
+		82838DB02B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.42.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.42.png"; sourceTree = "<group>"; };
+		82838DB12B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png"; sourceTree = "<group>"; };
+		82838DB22B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.54.14.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.54.14.png"; sourceTree = "<group>"; };
 		828AE1892ACDF8F100E4D94A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		82A4AE6D2AE1574E007099EB /* DashboardView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView2.swift; sourceTree = "<group>"; };
@@ -101,6 +117,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		82838DAA2B01756E00188D49 /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				82838DAE2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png */,
+				82838DAD2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png */,
+				82838DAB2B0175A500188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.44.png */,
+				82838DAC2B0175A500188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png */,
+				82838DB02B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.42.png */,
+				82838DAF2B0175A600188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.54.png */,
+				82838DB12B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png */,
+				82838DB22B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.54.14.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		82CB60DC2AD63C2600785690 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,6 +165,7 @@
 		82D2AD572ACDC17E00BF3108 /* Rick and Morty */ = {
 			isa = PBXGroup;
 			children = (
+				82838DAA2B01756E00188D49 /* Screenshots */,
 				82D2AD872ACDE8B100BF3108 /* ViewModels */,
 				82D2AD862ACDE89800BF3108 /* Views */,
 				82D2AD582ACDC17F00BF3108 /* Rick_and_MortyApp.swift */,
@@ -301,9 +333,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				828AE18A2ACDF8F200E4D94A /* README.md in Resources */,
+				82838DB82B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.42.png in Resources */,
 				82D2AD602ACDC18500BF3108 /* Preview Assets.xcassets in Resources */,
+				82838DB52B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png in Resources */,
 				82D2AD5D2ACDC18500BF3108 /* Assets.xcassets in Resources */,
 				82CB60DE2AD63C4E00785690 /* appdash.png in Resources */,
+				82838DB42B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png in Resources */,
+				82838DB92B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png in Resources */,
+				82838DB62B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png in Resources */,
+				82838DB72B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.52.54.png in Resources */,
+				82838DBA2B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.54.14.png in Resources */,
+				82838DB32B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.44.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
