@@ -26,7 +26,6 @@
 		828AE18A2ACDF8F200E4D94A /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 828AE1892ACDF8F100E4D94A /* README.md */; };
 		828D1C382ADB04E200DAAB78 /* LocationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */; };
 		82A4AE6E2AE1574E007099EB /* DashboardView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82A4AE6D2AE1574E007099EB /* DashboardView2.swift */; };
-		82CB60DE2AD63C4E00785690 /* appdash.png in Resources */ = {isa = PBXBuildFile; fileRef = 82CB60DD2AD63C4E00785690 /* appdash.png */; };
 		82D2AD592ACDC17F00BF3108 /* Rick_and_MortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AD582ACDC17F00BF3108 /* Rick_and_MortyApp.swift */; };
 		82D2AD5B2ACDC17F00BF3108 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 82D2AD5A2ACDC17F00BF3108 /* ContentView.swift */; };
 		82D2AD5D2ACDC18500BF3108 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 82D2AD5C2ACDC18500BF3108 /* Assets.xcassets */; };
@@ -76,7 +75,6 @@
 		828AE1892ACDF8F100E4D94A /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		828D1C372ADB04E200DAAB78 /* LocationDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationDetailView.swift; sourceTree = "<group>"; };
 		82A4AE6D2AE1574E007099EB /* DashboardView2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardView2.swift; sourceTree = "<group>"; };
-		82CB60DD2AD63C4E00785690 /* appdash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appdash.png; sourceTree = "<group>"; };
 		82D2AD552ACDC17E00BF3108 /* Rick and Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick and Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		82D2AD582ACDC17F00BF3108 /* Rick_and_MortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_and_MortyApp.swift; sourceTree = "<group>"; };
 		82D2AD5A2ACDC17F00BF3108 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -132,19 +130,11 @@
 			path = Screenshots;
 			sourceTree = "<group>";
 		};
-		82CB60DC2AD63C2600785690 /* Graphics */ = {
-			isa = PBXGroup;
-			children = (
-				82CB60DD2AD63C4E00785690 /* appdash.png */,
-			);
-			path = Graphics;
-			sourceTree = "<group>";
-		};
 		82D2AD4C2ACDC17E00BF3108 = {
 			isa = PBXGroup;
 			children = (
-				82CB60DC2AD63C2600785690 /* Graphics */,
 				828AE1892ACDF8F100E4D94A /* README.md */,
+				82838DAA2B01756E00188D49 /* Screenshots */,
 				82D2AD572ACDC17E00BF3108 /* Rick and Morty */,
 				82D2AD682ACDC18500BF3108 /* Rick and MortyTests */,
 				82D2AD722ACDC18500BF3108 /* Rick and MortyUITests */,
@@ -165,7 +155,6 @@
 		82D2AD572ACDC17E00BF3108 /* Rick and Morty */ = {
 			isa = PBXGroup;
 			children = (
-				82838DAA2B01756E00188D49 /* Screenshots */,
 				82D2AD872ACDE8B100BF3108 /* ViewModels */,
 				82D2AD862ACDE89800BF3108 /* Views */,
 				82D2AD582ACDC17F00BF3108 /* Rick_and_MortyApp.swift */,
@@ -337,7 +326,6 @@
 				82D2AD602ACDC18500BF3108 /* Preview Assets.xcassets in Resources */,
 				82838DB52B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.32.png in Resources */,
 				82D2AD5D2ACDC18500BF3108 /* Assets.xcassets in Resources */,
-				82CB60DE2AD63C4E00785690 /* appdash.png in Resources */,
 				82838DB42B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.50.56.png in Resources */,
 				82838DB92B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.53.58.png in Resources */,
 				82838DB62B0175A700188D49 /* Simulator Screen Shot - iPhone 13 mini - 2023-11-12 at 21.49.05.png in Resources */,
